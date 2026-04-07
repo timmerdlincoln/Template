@@ -94,23 +94,27 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* Secondary Gallery Section (Masonry Flow) */}
-      <section className="px-10 py-24 bg-surface">
-        <div className="max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-2 bg-black gap-8">
-          <div className="aspect-video md:aspect-square overflow-hidden">
-            <img 
-              alt="Large Industrial Infrastructure" 
-              className="w-full h-full object-cover grayscale brightness-90 hover:brightness-100 transition-all duration-700" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgX-IQppPdERw3-a0bQF4YFT3Azk0fFCgtgSYtqxQ6i61yhKblZtol5RSs_zWCebOmucl6RZg7KjTwmTDOZ2FuIXZgA5yCq3kIza8Au_TR6NqnWMOE13EkP02NDL-CIh93lp0AKkZs82h6nx5qUvsdcbsMbN4ZHLL9FdWlyfgC1Sf9-6E6tkt9_CVd4sgSyqGXDpsG4DvtCfeKuexFYp5TYGeg86tph7FPPe3GqPD3YYIN-PO6btee2Rcl6VLqrc4vn5U9_ZzG34e5" 
-            />
-          </div>
-          <div className="aspect-video md:aspect-square overflow-hidden">
-            <img 
-              alt="Industrial Conduit Detail" 
-              className="w-full h-full object-cover grayscale brightness-90 hover:brightness-100 transition-all duration-700" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ2-1H5aOXvdfGchElzbjeNP6eLtBHziazysVN5_pHxn--VsPSJnlagNYGDfdOYFRcqqDxdc_n64OEoY40i2L5d5WnbnUp8w67IszuvB8_uVgeFSWWtMhmiOp1XvGj4jzeqA1j6ZGkovTlCF4s84eVE5_3CsTOUDr03WvZgB4fQ7L74qBQWyz9UnEPE61Q2rk0FZgfwaYwtAd8MvEnphvKlokzhHzKWBj851ILHcocOosUcBTpzxMabwoFpmVF1p6cNSAo4aDhBRuV" 
-            />
-          </div>
+      {/* Secondary Gallery Section (Marquee) */}
+      <section className="py-24 bg-surface overflow-hidden">
+        <div className="animate-marquee-fast">
+          {[...Array(2)].map((_, set) => (
+            <div key={set} className="flex gap-4 pr-4">
+              {[
+                { alt: "Large Industrial Infrastructure", src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAgX-IQppPdERw3-a0bQF4YFT3Azk0fFCgtgSYtqxQ6i61yhKblZtol5RSs_zWCebOmucl6RZg7KjTwmTDOZ2FuIXZgA5yCq3kIza8Au_TR6NqnWMOE13EkP02NDL-CIh93lp0AKkZs82h6nx5qUvsdcbsMbN4ZHLL9FdWlyfgC1Sf9-6E6tkt9_CVd4sgSyqGXDpsG4DvtCfeKuexFYp5TYGeg86tph7FPPe3GqPD3YYIN-PO6btee2Rcl6VLqrc4vn5U9_ZzG34e5" },
+                { alt: "Industrial Conduit Detail", src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAJ2-1H5aOXvdfGchElzbjeNP6eLtBHziazysVN5_pHxn--VsPSJnlagNYGDfdOYFRcqqDxdc_n64OEoY40i2L5d5WnbnUp8w67IszuvB8_uVgeFSWWtMhmiOp1XvGj4jzeqA1j6ZGkovTlCF4s84eVE5_3CsTOUDr03WvZgB4fQ7L74qBQWyz9UnEPE61Q2rk0FZgfwaYwtAd8MvEnphvKlokzhHzKWBj851ILHcocOosUcBTpzxMabwoFpmVF1p6cNSAo4aDhBRuV" },
+                { alt: "Industrial Infrastructure", src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAgX-IQppPdERw3-a0bQF4YFT3Azk0fFCgtgSYtqxQ6i61yhKblZtol5RSs_zWCebOmucl6RZg7KjTwmTDOZ2FuIXZgA5yCq3kIza8Au_TR6NqnWMOE13EkP02NDL-CIh93lp0AKkZs82h6nx5qUvsdcbsMbN4ZHLL9FdWlyfgC1Sf9-6E6tkt9_CVd4sgSyqGXDpsG4DvtCfeKuexFYp5TYGeg86tph7FPPe3GqPD3YYIN-PO6btee2Rcl6VLqrc4vn5U9_ZzG34e5" },
+                { alt: "Subterranean Pipes", src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAJ2-1H5aOXvdfGchElzbjeNP6eLtBHziazysVN5_pHxn--VsPSJnlagNYGDfdOYFRcqqDxdc_n64OEoY40i2L5d5WnbnUp8w67IszuvB8_uVgeFSWWtMhmiOp1XvGj4jzeqA1j6ZGkovTlCF4s84eVE5_3CsTOUDr03WvZgB4fQ7L74qBQWyz9UnEPE61Q2rk0FZgfwaYwtAd8MvEnphvKlokzhHzKWBj851ILHcocOosUcBTpzxMabwoFpmVF1p6cNSAo4aDhBRuV" },
+              ].map((img, i) => (
+                <div key={i} className="w-[600px] aspect-video shrink-0 overflow-hidden">
+                  <img
+                    alt={img.alt}
+                    className="w-full h-full object-cover grayscale brightness-90"
+                    src={img.src}
+                  />
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </section>
     </main>

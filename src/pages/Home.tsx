@@ -94,56 +94,35 @@ export default function Home() {
       </section>
 
       {/* Section 3: Reviews Section */}
-      <section id="reviews" className="py-24 px-10 bg-surface-container-low">
-        <div className="mb-16 text-center">
+      <section id="reviews" className="py-24 bg-surface-container-low overflow-hidden">
+        <div className="mb-16 text-center px-10">
           <h2 className="text-5xl font-black uppercase tracking-tighter mb-4">REVIEWS</h2>
           <div className="w-24 h-2 bg-primary mx-auto"></div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Review 1 */}
-          <div className="bg-surface-container-lowest p-10 flex flex-col h-full">
-            <div className="flex mb-6 gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-[#FACC15] text-[#FACC15]" />
+        <div className="animate-marquee">
+          {[...Array(2)].map((_, set) => (
+            <div key={set} className="flex gap-8 pr-8">
+              {[
+                { quote: "Monolith managed our industrial retrofitting with absolute precision. Their team works like a Swiss watch—no delays, no mess, just pure engineering excellence.", name: "Marcus Vane" },
+                { quote: "Emergency dispatch arrived in 18 minutes. They contained a severe main line burst that would have cost us millions in equipment damage. Highly recommended.", name: "Elena Rodriguez" },
+                { quote: "Rare to find a company that values technical documentation as much as the physical labor. The final reporting we received for our residential complex was flawless.", name: "Arthur Sterling" },
+                { quote: "From quote to completion, zero surprises. The crew was professional, the work was clean, and the follow-up was thorough. Will use again without hesitation.", name: "James Holbrook" },
+                { quote: "They repiped our entire commercial building in three days with minimal disruption. The quality of the work matched the speed—outstanding across the board.", name: "Sofia Marten" },
+              ].map((review, i) => (
+                <div key={i} className="bg-surface-container-lowest p-10 flex flex-col w-[420px] shrink-0">
+                  <div className="flex mb-6 gap-1">
+                    {[...Array(5)].map((_, j) => (
+                      <Star key={j} className="w-5 h-5 fill-[#FACC15] text-[#FACC15]" />
+                    ))}
+                  </div>
+                  <p className="text-lg italic leading-relaxed mb-8 flex-grow">"{review.quote}"</p>
+                  <div className="pt-8 border-t border-surface-container">
+                    <p className="font-black uppercase tracking-widest text-sm text-on-surface">{review.name}</p>
+                  </div>
+                </div>
               ))}
             </div>
-            <p className="text-lg italic leading-relaxed mb-8 flex-grow">
-              "Monolith managed our industrial retrofitting with absolute precision. Their team works like a Swiss watch—no delays, no mess, just pure engineering excellence."
-            </p>
-            <div className="pt-8 border-t border-surface-container">
-              <p className="font-black uppercase tracking-widest text-sm text-on-surface">Marcus Vane</p>
-            </div>
-          </div>
-
-          {/* Review 2 */}
-          <div className="bg-surface-container-lowest p-10 flex flex-col h-full">
-            <div className="flex mb-6 gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-[#FACC15] text-[#FACC15]" />
-              ))}
-            </div>
-            <p className="text-lg italic leading-relaxed mb-8 flex-grow">
-              "Emergency dispatch arrived in 18 minutes. They contained a severe main line burst that would have cost us millions in equipment damage. Highly recommended."
-            </p>
-            <div className="pt-8 border-t border-surface-container">
-              <p className="font-black uppercase tracking-widest text-sm text-on-surface">Elena Rodriguez</p>
-            </div>
-          </div>
-
-          {/* Review 3 */}
-          <div className="bg-surface-container-lowest p-10 flex flex-col h-full">
-            <div className="flex mb-6 gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-[#FACC15] text-[#FACC15]" />
-              ))}
-            </div>
-            <p className="text-lg italic leading-relaxed mb-8 flex-grow">
-              "Rare to find a company that values technical documentation as much as the physical labor. The final reporting we received for our residential complex was flawless."
-            </p>
-            <div className="pt-8 border-t border-surface-container">
-              <p className="font-black uppercase tracking-widest text-sm text-on-surface">Arthur Sterling</p>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
