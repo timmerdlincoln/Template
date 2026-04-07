@@ -8,57 +8,61 @@ export default function Gallery() {
         </div>
       </header>
 
-      {/* Main Grid */}
-      <section className="px-10 pb-10 bg-surface">
-        <div className="grid grid-cols-12 gap-6">
-          {/* Large left */}
-          <div className="col-span-12 md:col-span-7 overflow-hidden aspect-[4/3] group">
-            <img
-              alt="Industrial Infrastructure"
-              className="w-full h-full object-cover grayscale brightness-75 group-hover:brightness-100 transition-all duration-700"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgX-IQppPdERw3-a0bQF4YFT3Azk0fFCgtgSYtqxQ6i61yhKblZtol5RSs_zWCebOmucl6RZg7KjTwmTDOZ2FuIXZgA5yCq3kIza8Au_TR6NqnWMOE13EkP02NDL-CIh93lp0AKkZs82h6nx5qUvsdcbsMbN4ZHLL9FdWlyfgC1Sf9-6E6tkt9_CVd4sgSyqGXDpsG4DvtCfeKuexFYp5TYGeg86tph7FPPe3GqPD3YYIN-PO6btee2Rcl6VLqrc4vn5U9_ZzG34e5"
-            />
+      {/* Gallery Grid */}
+      <section className="px-10 pb-20 bg-surface">
+        <div className="max-w-6xl mx-auto flex flex-col gap-20">
+          {/* Project 1 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="overflow-hidden aspect-[4/3] group">
+              <img
+                alt="Industrial Infrastructure"
+                className="w-full h-full object-cover grayscale brightness-75 group-hover:brightness-100 transition-all duration-700"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgX-IQppPdERw3-a0bQF4YFT3Azk0fFCgtgSYtqxQ6i61yhKblZtol5RSs_zWCebOmucl6RZg7KjTwmTDOZ2FuIXZgA5yCq3kIza8Au_TR6NqnWMOE13EkP02NDL-CIh93lp0AKkZs82h6nx5qUvsdcbsMbN4ZHLL9FdWlyfgC1Sf9-6E6tkt9_CVd4sgSyqGXDpsG4DvtCfeKuexFYp5TYGeg86tph7FPPe3GqPD3YYIN-PO6btee2Rcl6VLqrc4vn5U9_ZzG34e5"
+              />
+            </div>
+            <div>
+              <p className="text-[10px] font-black tracking-[0.4em] uppercase text-primary mb-3">Commercial</p>
+              <h3 className="text-3xl font-black uppercase tracking-tighter mb-4">Industrial Retrofit</h3>
+              <p className="text-on-surface-variant leading-relaxed">
+                Complete overhaul of a 40,000 sq ft industrial facility's piping infrastructure. Upgraded legacy systems to modern code-compliant installations with zero downtime to active operations.
+              </p>
+            </div>
           </div>
 
-          {/* Two stacked right */}
-          <div className="col-span-12 md:col-span-5 flex flex-col gap-6">
-            <div className="overflow-hidden aspect-[3/2] group">
+          {/* Project 2 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="order-2 md:order-1">
+              <p className="text-[10px] font-black tracking-[0.4em] uppercase text-primary mb-3">Residential</p>
+              <h3 className="text-3xl font-black uppercase tracking-tighter mb-4">Full Home Repipe</h3>
+              <p className="text-on-surface-variant leading-relaxed">
+                Replaced aging galvanized steel with copper throughout a 3,200 sq ft residence. Included new shut-off valves, pressure regulation, and a 10-year warranty on all joints.
+              </p>
+            </div>
+            <div className="overflow-hidden aspect-[4/3] group order-1 md:order-2">
               <img
-                alt="Macro Gauge"
+                alt="Copper piping installation"
                 className="w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-700"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkHj2tiODkp7Z2grrOb5YdDAVqkoanG8zk4AJbXqZfxRA7kRNCnKEoMnmTT92PGKoYkDg5f9zPnaSaNPXW_37WfIjAUDMvaXtshUxSW7FXmcJgX5D_K17GD1Zmh_7dol3hCAc2znoARnJPlj1t49h0VGuqaKbFxwbayiarXd7esLAtO1PAb3x7-2-p9SyJf-ksSjILITmqvuM08frmV6XKNfuJC4sp-nJlvyK84C1bRvjjcz3z7CORFBkDwCjD3MbhpP3tPCBNS44b"
               />
             </div>
-            <div className="overflow-hidden aspect-[3/2] group">
+          </div>
+
+          {/* Project 3 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="overflow-hidden aspect-[4/3] group">
               <img
-                alt="Weld Detail"
+                alt="Emergency repair work"
                 className="w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-700"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhg9di48KvT7DD-AzFzXMWIOY1SaF67V50G0_5DAHOAVAAJ_gKUrZIle41vTLAAeW91yY0VC6ggFmK8yp18Pa5Q2bzTN3m-N-CUwkdQz1nHDL_vp2aPn6bjhi2F2aF4xGoXoQBRix1_RYitP3U6yEg6PZ5O_klyY6lca_bVKTmw62lIUpBcBmyGYUQtUV8ugud5piEIQFwSDTdgRrSB9_8LTTIRk9exEfb--YGEv455BMxiM3Nwl4T7-kL4B1FHirdcHXsqfPEvcIu"
               />
             </div>
-          </div>
-
-          {/* Bottom three equal */}
-          <div className="col-span-12 md:col-span-4 overflow-hidden aspect-[4/3] group">
-            <img
-              alt="Valve Macro"
-              className="w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-700"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpVBt9Q7I2kZY6g5eqwO98V06dq5XG9j45ldQWNFfCeVCTWkKYuBd2-YFcRkRTGhIAl2QruiAQl3JDmpVzSvODv4bez4evGEZ9qeUkqjpGNqa8NvbGLuODEGiMcaEZ42WoWwCm0gzzKyJdTXEaCJucH8doRanYIdSi3RSkNDYFmJlDqyQUEVnLqcrZdoWf2hkIJ_Yl95puGLoNbYE46hJI8VEXov4Qi9BsiyrDjW6cDHMaggf_a58Hf6SzfQwKtTI_kpcQItLLPPXn"
-            />
-          </div>
-          <div className="col-span-12 md:col-span-4 overflow-hidden aspect-[4/3] group">
-            <img
-              alt="Steel Beam"
-              className="w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-700"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE2WDSSnFXjKzjsJSm1AAeE8X2MtpQtxspiYFtewA4fh8QWFKWEfAx1eC_ZEpuBs097E5mYx77WQylsTDjkPT2Yi2e2OBc4U8G7mkhgc8h9KZIGJNajFor22kndtgq9PkNbPlor-AX5OXMkZtEe0FkR1iXdgcCTPOA6IYhqf0qMApyBlTeEPRXSCpdSvM6XnITu53Z89qmi3_IuW62ODvVd0qz8ywej2IPSsqylj3gW2gDCtTgUBKkkBOxxUvJemKQhus157dpYQtp"
-            />
-          </div>
-          <div className="col-span-12 md:col-span-4 overflow-hidden aspect-[4/3] group">
-            <img
-              alt="Piping Geometry"
-              className="w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-700"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxLvs3CSBo6Z7VfwXv2Zp7wvQAPXuT0Bg4BYdEJELkUT4I4gteZD37yCC_dgeCevHVcQRQNTgSCbArGi55YcI8k3F176-TYQmXMfTKUZeYMwoJbiX-pqWmO1taMksg606eOX2YeRFNmezf9DuHYuzUwa5bo8VKujbVOxvBpOK3sm-A8GciA5H6oj5NFNlNUviL3xgE5sq9oy8lmzJM-93mX0VeUbxX8Jre41DR9pxBnVRGr-9nHCroFtXnbeAyfNKbZf6NeA1Si4Va"
-            />
+            <div>
+              <p className="text-[10px] font-black tracking-[0.4em] uppercase text-primary mb-3">Emergency</p>
+              <h3 className="text-3xl font-black uppercase tracking-tighter mb-4">Main Line Burst</h3>
+              <p className="text-on-surface-variant leading-relaxed">
+                Rapid-response containment and repair of a critical main line failure at a commercial complex. On-site within 18 minutes, fully resolved within 4 hours.
+              </p>
+            </div>
           </div>
         </div>
       </section>
