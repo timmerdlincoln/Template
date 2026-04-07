@@ -61,9 +61,6 @@
 }
 
 @layer base {
-  html {
-    zoom: 0.8;
-  }
   body {
     font-family: var(--font-body);
   }
