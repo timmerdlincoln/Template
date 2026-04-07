@@ -74,7 +74,7 @@ export default function Home() {
           </div>
 
           {/* Card 3 */}
-          <div className="bg-surface-container-high p-8 flex flex-col group hover:bg-surface-container-highest transition-all border-l-8 border-primary h-full">
+          <div className="bg-surface-container-high p-8 flex flex-col group hover:bg-surface-container-highest transition-all h-full">
             <div className="w-full aspect-[4/3] overflow-hidden mb-8">
               <img 
                 alt="night time emergency repair scene with focused yellow light on a technician working with heavy wrenches" 

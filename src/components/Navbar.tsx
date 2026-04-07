@@ -3,7 +3,16 @@ import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const location = useLocation();
-  const isHome = location.pathname === "/";
+  const path = location.pathname;
+
+  const navLink = (to: string, label: string) => (
+    <Link
+      className={`font-headline uppercase tracking-widest text-xs font-bold ${path === to ? 'text-black dark:text-white border-b-2 border-black dark:border-white pb-1' : 'text-stone-500 dark:text-stone-400 hover:text-black dark:hover:text-white transition-colors'}`}
+      to={to}
+    >
+      {label}
+    </Link>
+  );
 
   return (
     <nav className="bg-stone-50 dark:bg-stone-950 flex justify-between items-center w-full px-10 py-6 max-w-full border-0 sticky top-0 z-50">
@@ -14,8 +23,8 @@ export default function Navbar() {
         </div>
       </Link>
       <div className="hidden md:flex gap-8 items-center">
-        <Link className={`font-headline uppercase tracking-widest text-xs font-bold ${isHome ? 'text-black dark:text-white border-b-2 border-black dark:border-white pb-1' : 'text-stone-500 dark:text-stone-400 hover:text-black dark:hover:text-white transition-colors'}`} to="/">Home</Link>
-        <Link className={`font-headline uppercase tracking-widest text-xs font-bold ${!isHome ? 'text-black dark:text-white border-b-2 border-black dark:border-white pb-1' : 'text-stone-500 dark:text-stone-400 hover:text-black dark:hover:text-white transition-colors'}`} to="/gallery">Gallery</Link>
+        {navLink("/", "Home")}
+        {navLink("/gallery", "Gallery")}
         
         {/* Services Dropdown */}
         <div className="relative group py-4">
@@ -48,7 +57,7 @@ export default function Navbar() {
             More <ChevronDown className="w-3 h-3" />
           </a>
           <div className="absolute top-full left-0 mt-0 w-48 bg-white dark:bg-stone-950 border border-black dark:border-stone-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 flex flex-col shadow-xl">
-            <a href="/#about" className="px-4 py-3 font-headline text-[10px] font-bold uppercase tracking-widest text-stone-500 dark:text-stone-400 hover:text-black dark:hover:text-white hover:bg-stone-100 dark:hover:bg-stone-900 border-b border-stone-100 dark:border-stone-800 transition-colors">About Us</a>
+            <Link to="/about" className="px-4 py-3 font-headline text-[10px] font-bold uppercase tracking-widest text-stone-500 dark:text-stone-400 hover:text-black dark:hover:text-white hover:bg-stone-100 dark:hover:bg-stone-900 border-b border-stone-100 dark:border-stone-800 transition-colors">About Us</Link>
             <a href="/#contact" className="px-4 py-3 font-headline text-[10px] font-bold uppercase tracking-widest text-stone-500 dark:text-stone-400 hover:text-black dark:hover:text-white hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors">Contact</a>
           </div>
         </div>
