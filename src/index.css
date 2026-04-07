@@ -54,10 +54,10 @@
   --radius-xl: 0px;
   --radius-full: 0px;
 
-  --font-headline: "Space Grotesk", sans-serif;
-  --font-body: "Inter", sans-serif;
-  --font-label: "Inter", sans-serif;
-  --font-brand: "Space Grotesk", sans-serif;
+  --font-headline: "Syne", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-label: "DM Sans", sans-serif;
+  --font-brand: "Syne", sans-serif;
 }
 
 @keyframes marquee {
