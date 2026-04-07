@@ -1,8 +1,34 @@
+import { useState } from "react";
 import { Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useReveal } from "../useReveal";
 
 export default function Home() {
+  const [form, setForm] = useState({ name: "", phone: "", issue: "RESIDENTIAL", info: "" });
+  const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSending(true);
+    // Replace with your form endpoint (Formspree, Web3Forms, etc.)
+    try {
+      await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          phone: form.phone,
+          issue: form.issue,
+          message: form.info,
+        }),
+      });
+    } catch {
+      // Form will show success regardless for now — swap endpoint to make it real
+    }
+    setSending(false);
+    setSubmitted(true);
+  };
   useReveal();
 
   return (
@@ -135,32 +161,44 @@ export default function Home() {
           <div className="col-span-12 lg:col-span-7 p-12 md:p-20 flex flex-col justify-center bg-white">
             <h2 className="text-5xl font-black uppercase tracking-tighter mb-4 text-black">Get A Quote</h2>
             <p className="text-stone-600 mb-12 max-w-md">Fill in how fast their response will be</p>
-            <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-2">
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-black">Full Name</label>
-                  <input className="w-full focus:ring-0 focus:border-primary p-4 text-sm uppercase font-bold tracking-widest bg-white border border-black text-black outline-none transition-colors" type="text" />
+            {submitted ? (
+              <div className="py-16 text-center">
+                <h3 className="text-3xl font-black uppercase tracking-tighter mb-4 text-black">Thank You</h3>
+                <p className="text-stone-600 mb-8">We've received your request and will be in touch shortly.</p>
+                <button onClick={() => { setSubmitted(false); setForm({ name: "", phone: "", issue: "RESIDENTIAL", info: "" }); }} className="btn-press text-[10px] font-black tracking-widest uppercase border-b-2 border-primary pb-1 hover:border-stone-400 transition-colors">
+                  Submit Another
+                </button>
+              </div>
+            ) : (
+              <form className="space-y-8" onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-black">Full Name</label>
+                    <input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full focus:ring-0 focus:border-primary p-4 text-sm uppercase font-bold tracking-widest bg-white border border-black text-black outline-none transition-colors" type="text" />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-black">Phone Number</label>
+                    <input required value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full focus:ring-0 focus:border-primary p-4 text-sm uppercase font-bold tracking-widest bg-white border border-black text-black outline-none transition-colors" type="tel" />
+                  </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-black">Phone Number</label>
-                  <input className="w-full focus:ring-0 focus:border-primary p-4 text-sm uppercase font-bold tracking-widest bg-white border border-black text-black outline-none transition-colors" type="text" />
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-black">Primary Issue</label>
+                  <select value={form.issue} onChange={(e) => setForm({ ...form, issue: e.target.value })} className="w-full focus:ring-0 focus:border-primary p-4 text-sm uppercase font-bold tracking-widest bg-white border border-black text-black outline-none transition-colors">
+                    <option>RESIDENTIAL</option>
+                    <option>COMMERCIAL</option>
+                    <option>INDUSTRIAL</option>
+                    <option>EMERGENCY / CRITICAL</option>
+                  </select>
                 </div>
-              </div>
-              <div className="space-y-2">
-                <label className="text-[10px] font-bold uppercase tracking-widest text-black">Primary Issue</label>
-                <select className="w-full focus:ring-0 focus:border-primary p-4 text-sm uppercase font-bold tracking-widest bg-white border border-black text-black outline-none transition-colors">
-                  <option>RESIDENTIAL</option>
-                  <option>COMMERCIAL</option>
-                  <option>INDUSTRIAL</option>
-                  <option>EMERGENCY / CRITICAL</option>
-                </select>
-              </div>
-              <div className="space-y-2">
-                <label className="text-[10px] font-bold uppercase tracking-widest text-black">Other information</label>
-                <textarea className="w-full focus:ring-0 focus:border-primary p-4 text-sm uppercase font-bold tracking-widest resize-none bg-white border border-black text-black outline-none transition-colors" rows={4}></textarea>
-              </div>
-              <button className="btn-press w-full py-6 font-black uppercase text-sm tracking-[0.3em] hover:bg-stone-800 transition-colors bg-black text-white">Submit</button>
-            </form>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-black">Other information</label>
+                  <textarea value={form.info} onChange={(e) => setForm({ ...form, info: e.target.value })} className="w-full focus:ring-0 focus:border-primary p-4 text-sm uppercase font-bold tracking-widest resize-none bg-white border border-black text-black outline-none transition-colors" rows={4}></textarea>
+                </div>
+                <button disabled={sending} className="btn-press w-full py-6 font-black uppercase text-sm tracking-[0.3em] hover:bg-stone-800 transition-colors bg-black text-white disabled:opacity-50">
+                  {sending ? "Sending..." : "Submit"}
+                </button>
+              </form>
+            )}
           </div>
           {/* Industrial Photo Side */}
           <div className="col-span-12 lg:col-span-5 relative group flex items-center justify-center lg:p-0 bg-white">
