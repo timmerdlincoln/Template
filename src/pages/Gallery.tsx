@@ -117,6 +117,17 @@ export default function Gallery() {
           ))}
         </div>
       </section>
+
+      {/* CTA */}
+      <section className="py-24 px-10 bg-black text-white text-center">
+        <p className="text-[10px] font-black tracking-[0.4em] uppercase text-primary mb-6">Ready to Start?</p>
+        <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.85] mb-10">
+          Let's get to <br />work.
+        </h2>
+        <a href="/#contact" className="inline-block bg-white text-black px-12 py-5 font-black uppercase text-sm tracking-widest hover:bg-stone-200 transition-colors">
+          Get A Quote
+        </a>
+      </section>
     </main>
   );
 }
