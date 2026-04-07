@@ -1,4 +1,8 @@
+import { useReveal } from "../useReveal";
+
 export default function Gallery() {
+  useReveal();
+
   return (
     <main className="min-h-screen flex-grow bg-surface">
       {/* Hero Header */}
@@ -12,11 +16,11 @@ export default function Gallery() {
       <section className="px-10 pb-20 bg-surface">
         <div className="max-w-6xl mx-auto flex flex-col gap-20">
           {/* Project 1 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="overflow-hidden aspect-[4/3] group">
               <img
                 alt="Industrial Infrastructure"
-                className="w-full h-full object-cover grayscale brightness-75 group-hover:brightness-100 transition-all duration-700"
+                className="w-full h-full object-cover grayscale brightness-75 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgX-IQppPdERw3-a0bQF4YFT3Azk0fFCgtgSYtqxQ6i61yhKblZtol5RSs_zWCebOmucl6RZg7KjTwmTDOZ2FuIXZgA5yCq3kIza8Au_TR6NqnWMOE13EkP02NDL-CIh93lp0AKkZs82h6nx5qUvsdcbsMbN4ZHLL9FdWlyfgC1Sf9-6E6tkt9_CVd4sgSyqGXDpsG4DvtCfeKuexFYp5TYGeg86tph7FPPe3GqPD3YYIN-PO6btee2Rcl6VLqrc4vn5U9_ZzG34e5"
               />
             </div>
@@ -30,7 +34,7 @@ export default function Gallery() {
           </div>
 
           {/* Project 2 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
               <p className="text-[10px] font-black tracking-[0.4em] uppercase text-primary mb-3">Residential</p>
               <h3 className="text-3xl font-black uppercase tracking-tighter mb-4">Full Home Repipe</h3>
@@ -48,7 +52,7 @@ export default function Gallery() {
           </div>
 
           {/* Project 3 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="overflow-hidden aspect-[4/3] group">
               <img
                 alt="Emergency repair work"
@@ -91,12 +95,12 @@ export default function Gallery() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-10 bg-black text-white text-center">
+      <section className="py-24 px-10 bg-black text-white text-center reveal">
         <p className="text-[10px] font-black tracking-[0.4em] uppercase text-primary mb-6">Ready to Start?</p>
         <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.85] mb-10">
           Let's get to <br />work.
         </h2>
-        <a href="/#contact" className="inline-block bg-white text-black px-12 py-5 font-black uppercase text-sm tracking-widest hover:bg-stone-200 transition-colors">
+        <a href="/#contact" className="btn-press inline-block bg-white text-black px-12 py-5 font-black uppercase text-sm tracking-widest hover:bg-stone-200 transition-colors">
           Get A Quote
         </a>
       </section>
