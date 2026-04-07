@@ -1,6 +1,6 @@
 export default function Gallery() {
   return (
-    <main className="min-h-screen flex-grow bg-surface" style={{ zoom: 0.65 }}>
+    <main className="min-h-screen flex-grow bg-surface" >
       {/* Hero Header */}
       <header className="px-10 py-20 bg-surface">
         <div className="max-w-[1920px] mx-auto grid grid-cols-12 gap-8 items-end">
