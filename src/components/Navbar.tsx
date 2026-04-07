@@ -58,7 +58,7 @@ export default function Navbar() {
           </a>
           <div className="absolute top-full left-0 mt-0 w-52 bg-white dark:bg-stone-950 border border-black dark:border-stone-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 flex flex-col shadow-xl">
             <Link to="/about" className="px-5 py-3.5 font-headline text-xs font-bold uppercase tracking-widest text-stone-500 dark:text-stone-400 hover:text-black dark:hover:text-white hover:bg-stone-100 dark:hover:bg-stone-900 border-b border-stone-100 dark:border-stone-800 transition-colors">About Us</Link>
-            <a href="/#contact" className="px-5 py-3.5 font-headline text-xs font-bold uppercase tracking-widest text-stone-500 dark:text-stone-400 hover:text-black dark:hover:text-white hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors">Contact</a>
+            <Link to="/contact" className="px-5 py-3.5 font-headline text-xs font-bold uppercase tracking-widest text-stone-500 dark:text-stone-400 hover:text-black dark:hover:text-white hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors">Contact</Link>
           </div>
         </div>
       </div>
