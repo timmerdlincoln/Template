@@ -6,6 +6,7 @@ import Gallery from "./pages/Gallery";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import ScrollToTop from "./ScrollToTop";
+import CookieBanner from "./components/CookieBanner";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
+        <CookieBanner />
       </div>
     </Router>
   );
