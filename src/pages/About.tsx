@@ -64,11 +64,11 @@ export default function About() {
                 <h3 className="text-xl font-black uppercase tracking-tighter mb-2">Integrity</h3>
                 <p className="text-on-surface-variant leading-relaxed">We show up on time, give honest assessments, and never upsell what isn't needed. Your trust is the foundation of every job we take.</p>
               </div>
-              <div className="border-l-4 border-stone-300 pl-6 hover:border-primary transition-colors">
+              <div className="border-l-4 border-primary pl-6 hover:border-primary transition-colors">
                 <h3 className="text-xl font-black uppercase tracking-tighter mb-2">Expertise</h3>
                 <p className="text-on-surface-variant leading-relaxed">Every technician is licensed, insured, and continuously trained on the latest codes and techniques across residential and commercial systems.</p>
               </div>
-              <div className="border-l-4 border-stone-300 pl-6 hover:border-primary transition-colors">
+              <div className="border-l-4 border-primary pl-6 hover:border-primary transition-colors">
                 <h3 className="text-xl font-black uppercase tracking-tighter mb-2">Reliability</h3>
                 <p className="text-on-surface-variant leading-relaxed">We maintain a 24/7 emergency dispatch line because infrastructure doesn't fail on a schedule. When it matters most, we're there.</p>
               </div>
