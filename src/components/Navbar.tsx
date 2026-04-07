@@ -62,7 +62,7 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      <a href="tel:000-000-0000" className="bg-primary text-on-primary px-6 py-3 font-headline font-black text-xs uppercase tracking-[0.2em] hover:bg-primary-fixed active:scale-95 transition-all">
+      <a href="tel:000-000-0000" className="bg-primary text-on-primary px-6 py-3 font-headline font-black text-xs uppercase tracking-[0.2em] hover:bg-primary-fixed active:scale-95 transition-all rounded-full border-2 border-white">
         000-000-0000
       </a>
     </nav>
