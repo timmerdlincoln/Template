@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useReveal } from "../useReveal";
 import ContactForm from "../components/ContactForm";
 
@@ -6,6 +7,11 @@ export default function About() {
 
   return (
     <main className="flex-grow">
+      <Helmet>
+        <title>About Us | Monolith Plumbing - Licensed & Insured Since 2004</title>
+        <meta name="description" content="Learn about Monolith Plumbing's 20+ years of experience in residential, commercial, and emergency plumbing. Meet our licensed team and core values." />
+        <link rel="canonical" href="https://template-ten-orpin.vercel.app/about" />
+      </Helmet>
       {/* Section 1: Who We Are */}
       <section className="py-24 px-10 bg-black">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

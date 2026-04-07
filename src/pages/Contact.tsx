@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useReveal } from "../useReveal";
 import ContactForm from "../components/ContactForm";
 
@@ -6,6 +7,11 @@ export default function Contact() {
 
   return (
     <main className="flex-grow">
+      <Helmet>
+        <title>Contact Us | Get a Free Plumbing Quote | Monolith Plumbing</title>
+        <meta name="description" content="Request a free plumbing quote from Monolith Plumbing. Residential, commercial, and emergency services. Fast response guaranteed." />
+        <link rel="canonical" href="https://template-ten-orpin.vercel.app/contact" />
+      </Helmet>
       <section className="py-24 px-10 bg-black text-white min-h-[80vh] flex items-center">
         <div className="max-w-4xl mx-auto w-full text-center reveal">
           <p className="text-[10px] font-black tracking-[0.4em] uppercase text-primary mb-6">Get In Touch</p>

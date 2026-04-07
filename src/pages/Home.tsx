@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { useReveal } from "../useReveal";
 import ContactForm from "../components/ContactForm";
 
@@ -8,6 +9,11 @@ export default function Home() {
 
   return (
     <main className="flex-grow">
+      <Helmet>
+        <title>Monolith Plumbing | Licensed Residential & Commercial Plumbing Services</title>
+        <meta name="description" content="Monolith Plumbing provides licensed, insured residential, commercial, and emergency plumbing services. 24/7 emergency dispatch. Get a free quote today." />
+        <link rel="canonical" href="https://template-ten-orpin.vercel.app/" />
+      </Helmet>
       {/* Section 1: Hero Section */}
       <section id="home" className="relative h-[921px] flex items-center overflow-hidden bg-black">
         <div className="absolute inset-0 z-0">

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useReveal } from "../useReveal";
 import ContactForm from "../components/ContactForm";
 
@@ -6,6 +7,11 @@ export default function Gallery() {
 
   return (
     <main className="min-h-screen flex-grow bg-surface">
+      <Helmet>
+        <title>Our Work | Monolith Plumbing Project Gallery</title>
+        <meta name="description" content="Browse completed plumbing projects by Monolith Plumbing. Industrial retrofits, residential repipes, and emergency repairs. See our quality craftsmanship." />
+        <link rel="canonical" href="https://template-ten-orpin.vercel.app/gallery" />
+      </Helmet>
       {/* Hero Header */}
       <header className="px-10 py-16 bg-surface">
         <div className="text-center">
