@@ -72,6 +72,10 @@ export default function ContactForm({ dark = false }: { dark?: boolean }) {
           </button>
         </form>
       )}
+      <p className={`text-center mt-8 text-sm font-bold uppercase tracking-widest ${mutedColor}`}>
+        Call now for Emergency Service —{" "}
+        <a href="tel:000-000-0000" className={`${textColor} hover:underline transition-colors`}>(000)-000-0000</a>
+      </p>
     </div>
   );
 }
