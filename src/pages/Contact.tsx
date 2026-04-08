@@ -8,8 +8,8 @@ export default function Contact() {
   return (
     <main className="flex-grow">
       <Helmet>
-        <title>Contact Us | Get a Free Plumbing Quote | Monolith Plumbing</title>
-        <meta name="description" content="Request a free plumbing quote from Monolith Plumbing. Residential, commercial, and emergency services. Fast response guaranteed." />
+        <title>Contact Us | Get a Free Plumbing Quote | Template</title>
+        <meta name="description" content="Request a free plumbing quote from Template. Residential, commercial, and emergency services. Fast response guaranteed." />
         <link rel="canonical" href="https://template-ten-orpin.vercel.app/contact" />
       </Helmet>
       <section className="py-24 px-10 bg-black text-white min-h-[80vh] flex items-center">

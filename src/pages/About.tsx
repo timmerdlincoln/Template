@@ -8,8 +8,8 @@ export default function About() {
   return (
     <main className="flex-grow">
       <Helmet>
-        <title>About Us | Monolith Plumbing - Licensed & Insured Since 2004</title>
-        <meta name="description" content="Learn about Monolith Plumbing's 20+ years of experience in residential, commercial, and emergency plumbing. Meet our licensed team and core values." />
+        <title>About Us | Template - Licensed & Insured Since 2004</title>
+        <meta name="description" content="Learn about Template's 20+ years of experience in residential, commercial, and emergency plumbing. Meet our licensed team and core values." />
         <link rel="canonical" href="https://template-ten-orpin.vercel.app/about" />
       </Helmet>
       {/* Section 1: Who We Are */}

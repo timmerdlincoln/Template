@@ -19,7 +19,7 @@ export default function Navbar() {
       <Link to="/" className="text-3xl font-extrabold tracking-tighter text-black dark:text-white uppercase brand-font">
         <div className="flex items-center gap-3">
           <Wrench className="w-9 h-9" strokeWidth={1.5} />
-          <span className="tracking-tight">Business Name</span>
+          <span className="tracking-tight">Template</span>
         </div>
       </Link>
       <div className="hidden md:flex gap-10 items-center">

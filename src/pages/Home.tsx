@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <main className="flex-grow">
       <Helmet>
-        <title>Monolith Plumbing | Licensed Residential & Commercial Plumbing Services</title>
-        <meta name="description" content="Monolith Plumbing provides licensed, insured residential, commercial, and emergency plumbing services. 24/7 emergency dispatch. Get a free quote today." />
+        <title>Template Plumbing | Licensed Residential & Commercial Plumbing Services</title>
+        <meta name="description" content="Template Plumbing provides licensed, insured residential, commercial, and emergency plumbing services. 24/7 emergency dispatch. Get a free quote today." />
         <link rel="canonical" href="https://template-ten-orpin.vercel.app/" />
       </Helmet>
       {/* Section 1: Hero Section */}
@@ -112,7 +112,7 @@ export default function Home() {
           {[...Array(2)].map((_, set) => (
             <div key={set} className="flex gap-8 pr-8">
               {[
-                { quote: "Monolith managed our industrial retrofitting with absolute precision. Their team works like a Swiss watch—no delays, no mess, just pure engineering excellence.", name: "Marcus Vane" },
+                { quote: "Template managed our industrial retrofitting with absolute precision. Their team works like a Swiss watch—no delays, no mess, just pure engineering excellence.", name: "Marcus Vane" },
                 { quote: "Emergency dispatch arrived in 18 minutes. They contained a severe main line burst that would have cost us millions in equipment damage. Highly recommended.", name: "Elena Rodriguez" },
                 { quote: "Rare to find a company that values technical documentation as much as the physical labor. The final reporting we received for our residential complex was flawless.", name: "Arthur Sterling" },
                 { quote: "From quote to completion, zero surprises. The crew was professional, the work was clean, and the follow-up was thorough. Will use again without hesitation.", name: "James Holbrook" },
